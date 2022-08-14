@@ -1,0 +1,66 @@
+
+  <mat-stepper orientation="vertical"  #stepper (ngSubmit)="submit()">
+    <mat-step [stepControl]="nameFormGroup">
+      <form [formGroup]="nameFormGroup">
+        <ng-template matStepLabel>Project name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Project name</mat-label>
+          <input matInput placeholder="Project name" formControlName="nameCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="descriptionFormGroup">
+      <form [formGroup]="descriptionFormGroup">
+        <ng-template matStepLabel>Project description</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="descriptionCtrl" placeholder="Description"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="workerFormGroup">
+        <form [formGroup]="workerFormGroup">
+          <ng-template matStepLabel>List of workers</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Name of worker</mat-label>
+            <input matInput placeholder="Worker name" formControlName="workerCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button>Add</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="categoryFormGroup">
+        <form [formGroup]="categoryFormGroup">
+          <ng-template matStepLabel>Project name</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>List of categories</mat-label>
+            <input matInput placeholder="Category name" formControlName="categoryCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button>Add</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button type="submit" (click)="submit()"> Submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
