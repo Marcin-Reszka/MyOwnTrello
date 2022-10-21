@@ -1,0 +1,15 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let status of project.statuses">
+        <mat-list>
+            <h2>{{status}}</h2>
+            <ng-container >
+            <mat-list-item *ngFor="let task of tasksList | statusFilter:status" (click)="editTask(task)">
+                <span >{{task.name}}</span>
+            </mat-list-item>
+        </ng-container>
+            <button mat-raised-button color="primary" (click)="openDialog(status)">Add task</button>
+        </mat-list>
+    </mat-grid-tile>
+
+    
+  </mat-grid-list>

@@ -27,7 +27,7 @@
       </form>
     </mat-step>
     <mat-step [stepControl]="workerFormGroup">
-        <form [formGroup]="workerFormGroup">
+        <form [formGroup]="workerFormGroup" >
           <ng-template matStepLabel>List of workers</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Name of worker</mat-label>
@@ -35,21 +35,21 @@
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button>Add</button>
+            <button mat-button (click)="onAddWorker()" >Add</button>
             <button mat-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>
       <mat-step [stepControl]="categoryFormGroup">
         <form [formGroup]="categoryFormGroup">
-          <ng-template matStepLabel>Project name</ng-template>
+          <ng-template matStepLabel>Project categories</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>List of categories</mat-label>
             <input matInput placeholder="Category name" formControlName="categoryCtrl" required>
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button>Add</button>
+            <button mat-button (click)="onAddCategory()">Add</button>
             <button mat-button matStepperNext>Next</button>
           </div>
         </form>

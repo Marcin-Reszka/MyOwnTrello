@@ -1,0 +1,8 @@
+<mat-list>
+    <a mat-list-item *ngFor="let project of projectsList"  [routerLink]="['/task-view', project.id]" >
+      <h3 matLine> {{project.name}} </h3>
+      <p matLine>
+        <span> {{project.description}} </span>
+      </p>
+    </a>
+  </mat-list>

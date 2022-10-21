@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Add task</h1>
+<div mat-dialog-content>
+<form [formGroup]="nameFormGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="nameCtrl">
+    </mat-form-field>
+</form>
+<form [formGroup]="categoryFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryCtrl">
+          <mat-option *ngFor="let category of data.project.categories" [value]=category>{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</form>
+<form [formGroup]="workerFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Person</mat-label>
+        <mat-select formControlName="workerCtrl">
+          <mat-option *ngFor="let person of data.project.people" [value]=person>{{person}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</form>
+<form [formGroup]="descFormGroup">
+      <mat-form-field appearance="fill">
+       <mat-label>Description</mat-label>
+       <textarea matInput formControlName="descCtrl"></textarea>
+      </mat-form-field>
+</form>
+<button mat-raised-button color="primary" type="submit" (click)="onAddTask()">Submit</button>
+
+</div>

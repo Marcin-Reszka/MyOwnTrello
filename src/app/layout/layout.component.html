@@ -5,7 +5,8 @@
         [opened]="(isHandset$ | async) === false">
       <mat-toolbar>List of Projects</mat-toolbar>
       <mat-nav-list>
-        <mat-list-item *ngFor="let project of projectList">{{project.name}}</mat-list-item>
+        <!--<mat-list-item *ngFor="let project of projectList">{{project.name}}</mat-list-item>-->
+        <app-project-list></app-project-list>
         <button  mat-raised-button color="primary" (click)="showAddProject=!showAddProject">Add Project</button>
         <app-add-project *ngIf="showAddProject"></app-add-project>
       </mat-nav-list>

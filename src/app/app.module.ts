@@ -10,6 +10,13 @@ import { MaterialModule } from './material/material.module';
 import { LayoutComponent } from './layout/layout.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { ProjectListService } from './project-list/project-list.service';
+import { TaskViewComponent } from './task-view/task-view.component';
+import { AddTaskComponent } from './task-view/add-task/add-task.component';
+import { TaskService } from './shared/task.service';
+import { StatusFilterPipe } from './shared/status-filter.pipe';
+import { EditTaskComponent } from './task-view/edit-task/edit-task.component';
 
 
 @NgModule({
@@ -17,7 +24,12 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     ProjectsPanelComponent,
     LayoutComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    ProjectListComponent,
+    TaskViewComponent,
+    AddTaskComponent,
+    StatusFilterPipe,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +41,7 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     
     
   ],
-  providers: [],
+  providers: [ProjectListService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
